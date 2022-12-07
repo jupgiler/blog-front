@@ -1,11 +1,14 @@
 <template>
-  <div id="home-container">
+  <div id="nav-container">
+    <div class="horizontal">
+
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "Nav"
 }
 </script>
 
