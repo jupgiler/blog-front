@@ -1,7 +1,7 @@
 <template>
   <div id="nav-container">
     <div class="horizontal">
-      <div class="wrapper flex-between-center">
+      <div class="wrapper container flex-between-center">
         <div class="nav-switch">
           <a href="#" @click.prevent="navVisible= !navVisible">
             <svg-icon icon-class="s-fold"></svg-icon>
@@ -23,6 +23,7 @@
               placement="bottom"
               width="250"
               trigger="hover">
+            <UserCard></UserCard>
             <a slot="reference">
               <svg-icon icon-class="female"></svg-icon>
             </a>
@@ -67,8 +68,11 @@
 
 <script>
 
+import UserCard from "@/components/UserCard";
+
 export default {
   name: "Nav",
+  components: {UserCard},
   data() {
     return {
       activeName: "Home",

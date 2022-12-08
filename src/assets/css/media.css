@@ -1,29 +1,29 @@
 @media (min-width: 576px) {
-    .wrapper {
-        max-width: 540px;
+    .container {
+        max-width: 560px;
     }
 }
 
 @media (min-width: 768px) {
-    .wrapper {
-        max-width: 720px;
+    .container {
+        max-width: 740px;
     }
 }
 
 @media (min-width: 992px) {
-    .wrapper {
+    .container {
         max-width: 960px;
     }
 }
 
 @media (min-width: 1200px) {
-    .wrapper {
+    .container {
         max-width: 1140px;
     }
 }
 
 @media (min-width: 1400px) {
-    .wrapper {
+    .container {
         max-width: 1200px;
     }
 }
