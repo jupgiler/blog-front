@@ -9,8 +9,11 @@ import 'swiper/css/swiper.css'
 import mavonEditor from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 import VueTypedJs from 'vue-typed-js'
+import plugins from '@/utils/piugins'
 
-import '@/icons'
+import "@/mock/mockServer"
+import "animate.css"
+import '@/assets/icons'
 import '@/assets/css/index.css'
 import '@/assets/css/common.css'
 import '@/assets/css/media.css'
@@ -20,6 +23,7 @@ Vue.use(ElementUi)
 Vue.use(VueAwesomeSwiper)
 Vue.use(mavonEditor)
 Vue.use(VueTypedJs)
+Vue.use(plugins)
 
 new Vue({
     router,

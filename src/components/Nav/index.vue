@@ -43,6 +43,13 @@
         </div>
       </div>
     </div>
+    <!-- 搜索框 -->
+    <Search
+        v-if="searchVisible"
+        :search-visible="searchVisible"
+        @closeSearchDrawer="closeSearchDrawer"
+    >
+    </Search>
     <!-- 竖向导航 -->
     <el-drawer
         :visible.sync="navVisible"
@@ -51,7 +58,7 @@
         :modal="false"
         :size="300"
     >
-      <ul class="tab-list">
+      <ul class="mt20">
         <li v-for="(tab,index) in menus" :key="index"
             @click.prevent="handleCommand(tab)"
             class="tab-item"
@@ -69,10 +76,11 @@
 <script>
 
 import UserCard from "@/components/UserCard";
+import Search from "@/components/Search";
 
 export default {
   name: "Nav",
-  components: {UserCard},
+  components: {Search, UserCard},
   data() {
     return {
       activeName: "Home",
@@ -141,6 +149,9 @@ export default {
 
 <style lang="less" scoped>
 #nav-container {
+  width: 100%;
+  height: 60px;
+
   .horizontal {
     width: 100%;
     background-image: linear-gradient(to right, #bf30ac 0%, #0f9d58 100%);
@@ -189,17 +200,8 @@ export default {
     }
   }
 
-  .tab-list {
-    margin-top: 20px;
-
-    .tab-item {
-      padding: 10px 40px;
-    }
-  }
-
-
   /deep/ .el-drawer__wrapper {
-    top: 59px;
+    top: 60px;
 
     .el-drawer {
       min-height: 450px;

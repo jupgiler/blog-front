@@ -1,29 +1,36 @@
-@media (min-width: 576px) {
+/* 宽度大于 576px 的屏幕使用该样式*/
+@media screen and (min-width: 576px) {
     .container {
         max-width: 560px;
     }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .container {
-        max-width: 740px;
+        max-width: 760px;
     }
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
     .container {
-        max-width: 960px;
+        max-width: 980px;
     }
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
     .container {
         max-width: 1140px;
     }
 }
 
-@media (min-width: 1400px) {
-    .container {
-        max-width: 1200px;
+
+/* 宽度小于 980px 的屏幕使用该样式*/
+@media screen and (max-width: 980px) {
+    .left-aside {
+        width: 100% !important;
+    }
+
+    .right-aside {
+        display: none;
     }
 }
