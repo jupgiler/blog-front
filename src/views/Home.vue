@@ -8,8 +8,11 @@
       </div>
       <div class="right-aside">
         <AuthorCard></AuthorCard>
+        <HotArticle class="mt20"></HotArticle>
+        <Hopper class="mt20"></Hopper>
       </div>
     </div>
+    <FootWaveLine></FootWaveLine>
   </div>
 </template>
 
@@ -19,10 +22,13 @@ import {getArticleList} from "@/api/article";
 import Banner from "@/components/Carousel/Banner";
 import AuthorCard from "@/components/UserCard/AuthorCard";
 import ArticleCard from "@/components/ArticleCard";
+import HotArticle from "@/components/HotArticle";
+import Hopper from "@/components/Hopper";
+import FootWaveLine from "@/components/Footer/FootWaveLine";
 
 export default {
   name: "Home",
-  components: {ArticleCard, AuthorCard, Banner, Nav},
+  components: {FootWaveLine, Hopper, HotArticle, ArticleCard, AuthorCard, Banner, Nav},
   data() {
     return {}
   },

@@ -1,7 +1,7 @@
 <template>
   <div class="author-card">
     <div class="author-bg">
-      <img src="/image/20221122114159.jpg" alt="" class="bg-img">
+      <img src="/image/20221122113823.jpg" alt="" class="bg-img">
     </div>
     <div class="text-center">
       <div class="author-avatar">
@@ -37,25 +37,25 @@
       </div>
       <div v-else>
         <p class="mt20 login-title">HI 请登录</p>
-        <a href="#" class="login-btn" @click.prevent="$emit('openLoginModel')">登录</a>
-        <div class="separator mt20">
-          社交账号登录
-        </div>
+        <a href="#" class="login-btn" @click.prevent="openLoginDialog">登录</a>
+        <FastLogin class="mt20"></FastLogin>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import FastLogin from "@/components/Login/FastLogin";
+
 export default {
   name: "AuthorCard",
+  components: {FastLogin},
   props: {},
   data() {
     return {}
   },
   methods: {
     pushArticle() {
-      this.$router.push("/WriteArticle")
     }
   }
 }

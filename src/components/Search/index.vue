@@ -1,63 +1,65 @@
 <template>
-  <el-drawer
-      :visible.sync="searchVisible"
-      :with-header="false"
-      direction="ttb"
-      :modal="false"
-      :before-close="handleClose"
-  >
-    <div class="search-frame">
-      <el-autocomplete
-          class="search-text"
-          v-model="searchVal"
-          :fetch-suggestions="querySearch"
-          placeholder="请输入内容"
-          :trigger-on-focus="false"
-          :withHeader="false"
-          @select="handleAutoSelect"
-      >
-        <template slot-scope="{ item }">
-          <div class="flex-between-center">
-            <p class="text-ellipsis max-width-80">{{ item.title }}</p>
-            <p>10人搜索过</p>
+  <div class="search-container">
+    <el-drawer
+        :visible.sync="searchVisible"
+        :with-header="false"
+        direction="ttb"
+        :modal="false"
+        :before-close="handleClose"
+    >
+      <div class="search-frame">
+        <el-autocomplete
+            class="search-text"
+            v-model="searchVal"
+            :fetch-suggestions="querySearch"
+            placeholder="请输入内容"
+            :trigger-on-focus="false"
+            :withHeader="false"
+            @select="handleAutoSelect"
+        >
+          <template slot-scope="{ item }">
+            <div class="flex-between-center">
+              <p class="text-ellipsis">{{ item.title }}</p>
+              <p>10人搜索过</p>
+            </div>
+          </template>
+        </el-autocomplete>
+        <div class="hot-search mt10" v-if="hotList.length > 0">
+          <p class="muted">热门搜索</p>
+          <div class="tags mt10">
+            <el-tag
+                class="mr10"
+                type="info"
+                size="small"
+                v-for="(name,index) in hotList" :key="index"
+            >
+              {{ name }}
+            </el-tag>
           </div>
-        </template>
-      </el-autocomplete>
-      <div class="hot-search mt10" v-if="hotList.length > 0">
-        <p class="muted">热门搜索</p>
-        <div class="tags mt10">
-          <el-tag
-              class="mr10"
-              type="info"
-              size="small"
-              v-for="(name,index) in hotList" :key="index"
-          >
-            {{ name }}
-          </el-tag>
+        </div>
+        <div class="history-search mt10" v-if="historyList.length > 0">
+          <div class="flex-between-center">
+            <p class="muted">历史搜索</p>
+            <a href="#" class="muted" @click.prevent="clearHistoryList"><i class="el-icon-delete"></i></a>
+          </div>
+          <div class="tags mt10">
+            <el-tag
+                class="mr10"
+                type="info"
+                size="small"
+                v-for="(name,index) in historyList" :key="index"
+            >
+              {{ name }}
+            </el-tag>
+          </div>
+        </div>
+        <div class="recommend-article mt10" v-if="recommendVisible">
+          <p class="muted">推荐文章</p>
+          <Recommend class="mt10"></Recommend>
         </div>
       </div>
-      <div class="history-search mt10" v-if="historyList.length > 0">
-        <div class="flex-between-center">
-          <p class="muted">历史搜索</p>
-          <a href="#" class="muted" @click.prevent="clearHistoryList"><i class="el-icon-delete"></i></a>
-        </div>
-        <div class="tags mt10">
-          <el-tag
-              class="mr10"
-              type="info"
-              size="small"
-              v-for="(name,index) in historyList" :key="index"
-          >
-            {{ name }}
-          </el-tag>
-        </div>
-      </div>
-      <div class="recommend-article mt10" v-if="recommendVisible">
-        <p class="muted">推荐文章</p>
-        <Recommend class="mt10"></Recommend>
-      </div>
-    </div>
-  </el-drawer>
+    </el-drawer>
+  </div>
 </template>
 
 <script>
@@ -67,10 +69,6 @@ export default {
   name: "Search",
   components: {Recommend},
   props: {
-    searchVisible: {
-      type: Boolean,
-      default: false
-    },
     recommendVisible: {
       type: Boolean,
       default: true
@@ -78,6 +76,7 @@ export default {
   },
   data() {
     return {
+      searchVisible: false,
       searchVal: "", // 搜索的值
       hotList: ["测试一", "测试二", "测试三"], // 热门搜索列表
       historyList: [], // 历史搜索列表
@@ -117,27 +116,39 @@ export default {
       localStorage.removeItem('historyList');
       this.historyList = [];
     },
-    // 调用父组件的closeSearchDrawer方法,将searchDrawer置为false
     handleClose() {
-      this.$emit("closeSearchDrawer")
+      this.searchVisible = false
+    },
+    open() {
+      this.searchVisible = true
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-.search-frame {
-  max-width: 600px;
-  margin: 0 auto;
+.search-container {
+  .search-frame {
+    max-width: 600px;
+    margin: 0 auto;
 
-  .search-text {
-    width: 100%;
-    margin-top: 40px;
+    .search-text {
+      width: 100%;
+      margin-top: 40px;
+    }
   }
 }
 
 .muted {
   color: var(--muted-color);
   font-size: 14px;
+}
+
+/deep/ .el-drawer__wrapper {
+  top: 60px;
+
+  .el-drawer {
+    min-height: 450px;
+  }
 }
 </style>

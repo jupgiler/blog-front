@@ -57,6 +57,37 @@
     word-break: break-word;
 }
 
+.card-title {
+    display: flex;
+    align-items: center;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    border-bottom: 1px solid #ebeef5;
+    position: relative;
+}
+
+.card-title:after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 2px;
+    top: auto;
+    left: 0;
+    bottom: -1px;
+    transition: 3s ease all;
+    border-radius: 2px;
+    background: black;
+}
+
+.card-title:hover:after {
+    width: 100%;
+    transition: 3s ease all;
+}
+
 .title-theme {
     position: relative;
     padding-left: 1.2rem;
@@ -191,6 +222,10 @@
 
 .ml20 {
     margin-left: 20px;
+}
+
+.mr05 {
+    margin-right: 5px;
 }
 
 .mr10 {

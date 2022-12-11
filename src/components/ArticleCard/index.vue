@@ -20,15 +20,15 @@
               {{ item.createTime }}
             </div>
             <div class="i-view mr16">
-              <i class="el-icon-view"></i>
+              <svg-icon icon-class="view"/>
               {{ item.views }}
             </div>
             <div class="i-comment mr16">
-              <i class="el-icon-chat-dot-round"></i>
+              <svg-icon icon-class="comment"/>
               {{ item.comments }}
             </div>
             <div class="i-like">
-              <i class="el-icon-thumb"></i>
+              <svg-icon icon-class="like"/>
               {{ item.likes }}
             </div>
           </div>

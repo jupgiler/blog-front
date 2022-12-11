@@ -28,7 +28,7 @@
               <svg-icon icon-class="female"></svg-icon>
             </a>
           </el-popover>
-          <a href="#" class="search-btn ml20" @click.prevent="searchVisible=true">
+          <a href="#" class="search-btn ml20" @click.prevent="openSearchDrawer">
             <svg-icon icon-class="search"></svg-icon>
           </a>
           <el-popover
@@ -43,13 +43,6 @@
         </div>
       </div>
     </div>
-    <!-- 搜索框 -->
-    <Search
-        v-if="searchVisible"
-        :search-visible="searchVisible"
-        @closeSearchDrawer="closeSearchDrawer"
-    >
-    </Search>
     <!-- 竖向导航 -->
     <el-drawer
         :visible.sync="navVisible"
@@ -76,7 +69,7 @@
 <script>
 
 import UserCard from "@/components/UserCard";
-import Search from "@/components/Search";
+import Search from "@/components/Search/search";
 
 export default {
   name: "Nav",
@@ -131,18 +124,6 @@ export default {
       this.activeName = this.$route.name
       window.open(route.href, target)
     },
-    // 搜索子组件关闭的回调
-    closeSearchDrawer() {
-      this.searchVisible = false
-    },
-    // 打开登录弹窗
-    openLoginModel() {
-      this.loginVisible = true
-    },
-    // 关闭登录弹窗
-    closeLoginModel() {
-      this.loginVisible = false
-    }
   }
 }
 </script>
@@ -197,14 +178,6 @@ export default {
         position: relative;
         padding: 0 5px;
       }
-    }
-  }
-
-  /deep/ .el-drawer__wrapper {
-    top: 60px;
-
-    .el-drawer {
-      min-height: 450px;
     }
   }
 }

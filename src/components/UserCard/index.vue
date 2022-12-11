@@ -45,11 +45,11 @@
     </div>
     <div v-else>
       <div class="flex around">
-        <a href="#" class="flex-column-center blue-color">
+        <a href="#" class="flex-column-center blue-color" @click.prevent="openLoginDialog">
           <span class="small-circle blue-bg-1"> <svg-icon icon-class="login"/></span>
           <span class="mt05 fs12">用户登录</span>
         </a>
-        <a href="#" class="flex-column-center green-color">
+        <a href="#" class="flex-column-center green-color" @click.prevent="openRegisterDialog">
           <span class="small-circle green-bg-1"> <svg-icon icon-class="register"/></span>
           <span class="mt05 fs12">用户注册</span>
         </a>
@@ -58,27 +58,17 @@
           <span class="mt05 fs12">找回密码</span>
         </a>
       </div>
-      <div class="text-center mt20">
-        <p class="separator">快速登录</p>
-        <div class="mt10">
-          <el-tooltip effect="dark" content="QQ登录" placement="top">
-            <svg-icon icon-class="qq" class-name="small-btn"/>
-          </el-tooltip>
-          <el-tooltip effect="dark" content="微信登录" placement="top">
-            <svg-icon icon-class="wechat" class-name="small-btn ml10 mr10"/>
-          </el-tooltip>
-          <el-tooltip effect="dark" content="GitHub" placement="top">
-            <svg-icon icon-class="github" class-name="small-btn"/>
-          </el-tooltip>
-        </div>
-      </div>
+      <FastLogin class="mt20"></FastLogin>
     </div>
   </div>
 </template>
 
 <script>
+import FastLogin from "@/components/Login/FastLogin";
+
 export default {
   name: "UserCard",
+  components: {FastLogin},
   data() {
     return {}
   }

@@ -1,7 +1,7 @@
 /* 宽度大于 576px 的屏幕使用该样式*/
 @media screen and (min-width: 576px) {
     .container {
-        max-width: 560px;
+        max-width: 570px;
     }
 }
 
@@ -13,7 +13,7 @@
 
 @media screen and (min-width: 992px) {
     .container {
-        max-width: 980px;
+        max-width: 990px;
     }
 }
 
@@ -25,7 +25,7 @@
 
 
 /* 宽度小于 980px 的屏幕使用该样式*/
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 990px) {
     .left-aside {
         width: 100% !important;
     }
