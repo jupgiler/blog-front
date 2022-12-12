@@ -1,0 +1,58 @@
+{
+  "labels": {
+    "data": [
+      {
+        "id": 1,
+        "name": "java"
+      },
+      {
+        "id": 2,
+        "name": "goland"
+      },
+      {
+        "id": 3,
+        "name": "idea"
+      },
+      {
+        "id": 4,
+        "name": "linux"
+      },
+      {
+        "id": 5,
+        "name": "docker"
+      },
+      {
+        "id": 6,
+        "name": "es"
+      },
+      {
+        "id": 7,
+        "name": "kafka"
+      },
+      {
+        "id": 8,
+        "name": "redis"
+      },
+      {
+        "id": 9,
+        "name": "php"
+      },
+      {
+        "id": 10,
+        "name": "c++"
+      },
+      {
+        "id": 11,
+        "name": "go"
+      },
+      {
+        "id": 12,
+        "name": "mysql"
+      },
+      {
+        "id": 13,
+        "name": "python"
+      }
+    ]
+  }
+}
