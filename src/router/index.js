@@ -13,6 +13,16 @@ const routes = [
         path: '/archive',
         name: 'Archive',
         component: () => import('@/views/Archive')
+    },
+    {
+        path: '/readArticle',
+        name: 'ReadArticle',
+        component: () => import('@/views/ReadArticle')
+    },
+    {
+        path: '/writeArticle',
+        name: 'WriteArticle',
+        component: () => import('@/views/WriteArticle')
     }
 ]
 

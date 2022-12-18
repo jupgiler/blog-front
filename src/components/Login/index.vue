@@ -16,40 +16,34 @@
           <i class="el-icon-arrow-right"></i>
         </a>
       </div>
-      <el-form ref="form-box" :model="form" class="mt10">
-        <el-form-item prop="username">
-          <el-input
-              v-model="form.username"
-              placeholder="用户名"
-          ></el-input>
-        </el-form-item>
-        <el-form-item prop="phone" v-if="!showLogin">
-          <el-input
-              v-model="form.phone"
-              placeholder="手机号"
-          ></el-input>
-        </el-form-item>
-        <el-form-item prop="password">
-          <el-input
-              v-model="form.password"
-              placeholder="密码"
-              show-password
-          >
-          </el-input>
-        </el-form-item>
-        <div class="relative flex-between-center" v-if="showLogin">
-          <el-checkbox v-model="checked">记住登录</el-checkbox>
-          <a href="#" style="color: #777">找回密码</a>
-        </div>
-        <div class="option mt10">
-          <a href="#" class="login-btn btn" v-if="showLogin">
-            登录
-          </a>
-          <a href="#" class="register-btn btn" v-else>
-            注册
-          </a>
-        </div>
-      </el-form>
+      <div class="login-box" v-if="showLogin">
+        <el-form ref="login-box" :model="loginForm" class="mt10" :rules="loginRules">
+          <el-form-item prop="username">
+            <el-input
+                v-model="loginForm.username"
+                placeholder="用户名"
+            ></el-input>
+          </el-form-item>
+          <el-form-item prop="password">
+            <el-input
+                v-model="loginForm.password"
+                placeholder="密码"
+                show-password
+            >
+            </el-input>
+          </el-form-item>
+          <div class="flex-between-center">
+            <el-checkbox v-model="checked">记住登录</el-checkbox>
+            <a href="#" style="color: #777">找回密码</a>
+          </div>
+          <div class="option mt10">
+            <a href="#" class="login-btn btn" v-if="showLogin">
+              登录
+            </a>
+          </div>
+        </el-form>
+      </div>
+      <div class="register-box" v-else></div>
     </div>
   </el-dialog>
 </template>
@@ -57,15 +51,31 @@
 <script>
 export default {
   name: "Login",
-  props: {},
   data() {
+    const validateUsername = (rule, value, callback) => {
+      if (!this.validUsername(value)) {
+        callback(new Error('Please enter the correct user name'))
+      } else {
+        callback()
+      }
+    }
+    const validatePassword = (rule, value, callback) => {
+      if (value.length < 6) {
+        callback(new Error('The password can not be less than 6 digits'))
+      } else {
+        callback()
+      }
+    }
     return {
       loginVisible: false,
       showLogin: false,
-      form: {
+      loginForm: {
         username: "",
-        password: "",
-        phone: ""
+        password: ""
+      },
+      loginRules: {
+        username: [{required: true, trigger: 'blur', validator: validateUsername}],
+        password: [{required: true, trigger: 'blur', validator: validatePassword}]
       },
       checked: false,
     }
@@ -80,6 +90,10 @@ export default {
     open(showLogin) {
       this.showLogin = showLogin
       this.loginVisible = true
+    },
+    validUsername(str) {
+      const valid_map = ['admin', 'editor']
+      return valid_map.indexOf(str.trim()) >= 0
     }
   }
 }
@@ -91,6 +105,7 @@ export default {
     position: relative;
     font-size: 1.8em;
     padding-bottom: 8px;
+    margin-bottom: 8px;
   }
 
   .title:after {
@@ -127,7 +142,7 @@ export default {
 
     .btn {
       display: inline-block;
-      width: 300px;
+      width: 100%;
       height: 34px;
       line-height: 34px;
       border-radius: 17px;

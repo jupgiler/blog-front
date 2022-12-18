@@ -31,7 +31,7 @@
           </el-tooltip>
         </div>
         <div class="mt30">
-          <a href="#" class="new-article btn" @click.prevent="pushArticle">发布文章</a>
+          <a href="#" class="new-article btn" @click.prevent="writeArticle">发布文章</a>
           <a href="#" class="user-info btn">用户中心</a>
         </div>
       </div>
@@ -55,8 +55,6 @@ export default {
     return {}
   },
   methods: {
-    pushArticle() {
-    }
   }
 }
 </script>

@@ -1,5 +1,6 @@
 export const globalMixin = {
     methods: {
+        // 读取文章
         readArticle(item) {
             console.log("readArticle item:", item)
             let route = this.$router.resolve({
@@ -9,6 +10,10 @@ export const globalMixin = {
                 }
             })
             window.open(route.href, "_blank")
+        },
+        // 写文章
+        writeArticle() {
+            this.$router.push({name: "WriteArticle"})
         },
         // 打开登录弹窗
         openLoginDialog() {

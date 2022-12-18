@@ -24,10 +24,11 @@
 }
 
 
-/* 宽度小于 980px 的屏幕使用该样式*/
+/* 宽度小于 990px 的屏幕使用该样式*/
 @media screen and (max-width: 990px) {
     .left-aside {
         width: 100% !important;
+
     }
 
     .right-aside {
