@@ -9,6 +9,7 @@
       <div class="right-aside">
         <AuthorCard></AuthorCard>
         <HotArticle class="mt20"></HotArticle>
+        <TagCloud class="mt20"></TagCloud>
         <Hopper class="mt20"></Hopper>
       </div>
     </div>
@@ -25,10 +26,11 @@ import ArticleCard from "@/components/ArticleCard";
 import HotArticle from "@/components/HotArticle";
 import Hopper from "@/components/Hopper";
 import FootWaveLine from "@/components/Footer/FootWaveLine";
+import TagCloud from "@/components/TagCloud";
 
 export default {
   name: "Home",
-  components: {FootWaveLine, Hopper, HotArticle, ArticleCard, AuthorCard, Banner, Nav},
+  components: {TagCloud, FootWaveLine, Hopper, HotArticle, ArticleCard, AuthorCard, Banner, Nav},
   data() {
     return {}
   },

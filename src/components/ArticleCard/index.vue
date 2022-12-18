@@ -78,7 +78,7 @@ export default {
 
       .article-pic {
         width: 230px;
-        height: 180px;
+        height: 160px;
         flex-shrink: 0;
         position: relative;
         overflow: hidden;

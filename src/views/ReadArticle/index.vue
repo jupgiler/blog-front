@@ -43,7 +43,7 @@
                   </div>
                   <div class="user-action">
                     <a href="#" class="follow medium-rect">
-                      <i class="el-icon-apple"></i>
+                      <svg-icon icon-class="follow"/>
                       关注
                     </a>
                     <a href="#" class="private medium-rect">
