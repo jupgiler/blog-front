@@ -16,11 +16,6 @@
               <svg-icon icon-class="like"/>
             </a>
           </el-badge>
-          <el-badge value="0">
-            <a class="small-circle opt-item">
-              <svg-icon icon-class="message"/>
-            </a>
-          </el-badge>
         </div>
         <div class="article-detail">
           <div class="article-header">
@@ -189,11 +184,12 @@ export default {
 
       .opt-item {
         margin-bottom: 15px;
-        background: #9d7979;
         width: 40px;
         height: 40px;
         line-height: 40px;
         cursor: pointer;
+        background: black;
+        color: white;
       }
     }
 

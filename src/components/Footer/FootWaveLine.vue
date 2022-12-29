@@ -1,22 +1,24 @@
 <template>
-  <div class="foot-wave-line">
-    <div class="foot-content flex-between-center">
-      <div class="foot-left">
-        <div class="my-fan"></div>
-        <div class="my-face">
-          走自己的路,让别人去说吧
+  <div id="foot-wave-line">
+    <div class="foot-content">
+      <div class="flex-between-center">
+        <div class="foot-left">
+          <div class="my-fan"></div>
+          <div class="my-face">
+            走自己的路,让别人去说吧
+          </div>
         </div>
-      </div>
-      <div class="foot-right flex-between-center">
-        <div class="random-article">
-          <el-tooltip effect="dark" v-for="(item,index) in randomList" :key="item.id" v-if="index===randomNum"
-                      :content="item.title" placement="top">
-            <a href="#" class="r-title">
-              <i class="el-icon-link"></i>
-              {{ item.title }}
-            </a>
-          </el-tooltip>
-          <span class="r-wz">随机推荐</span>
+        <div class="foot-right flex-between-center">
+          <div class="random-article">
+            <el-tooltip effect="dark" v-for="(item,index) in randomList" :key="item.id" v-if="index===randomNum"
+                        :content="item.title" placement="top">
+              <a href="#" class="r-title">
+                <i class="el-icon-link"></i>
+                {{ item.title }}
+              </a>
+            </el-tooltip>
+            <span class="r-wz">随机推荐</span>
+          </div>
         </div>
       </div>
     </div>
@@ -69,14 +71,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.foot-wave-line {
-  width: 100%;
-  height: 50px;
-
+#foot-wave-line {
   .foot-content {
     width: 100%;
     height: 50px;
-    left: 0;
+    line-height: 50px;
     bottom: 0;
     position: fixed;
     z-index: 1600;
@@ -84,16 +83,6 @@ export default {
     box-shadow: 0 -2px 10px rgb(0 0 0 / 10%);
 
     .foot-left {
-      position: relative;
-
-      .my-fan {
-        //width: 210px;
-        //height: 120px;
-        //position: fixed;
-        //bottom: 0;
-        //z-index: 110;
-        //background: url(https://static.talkxj.com/config/commentBack.webp) 100% 100% no-repeat;
-      }
 
       .my-face {
         animation: my-face 5s infinite ease-in-out;

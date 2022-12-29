@@ -13,26 +13,26 @@
         <div class="author-count mt20">
           <el-tooltip effect="dark" content="共10篇文章" placement="top">
             <a href="#" class="medium-rect blue-bg-1 blue-color fs12">
-              <i class="el-icon-chat-dot-round"></i>
+              <svg-icon icon-class="article"/>
               1000
             </a>
           </el-tooltip>
           <el-tooltip effect="dark" content="共10条评论" placement="top">
             <a href="#" class="medium-rect green-bg-1 green-color fs12" style="margin: 0 8px">
-              <i class="el-icon-chat-dot-round"></i>
-              2
+              <svg-icon icon-class="comment"/>
+              10
             </a>
           </el-tooltip>
-          <el-tooltip effect="dark" content="" placement="top">
+          <el-tooltip effect="dark" content="共多少人气" placement="top">
             <a href="#" class="medium-rect red-bg-1 red-color fs12">
-              <i class="el-icon-chat-dot-round"></i>
+              <svg-icon icon-class="hit"/>
               3
             </a>
           </el-tooltip>
         </div>
         <div class="mt30">
           <a href="#" class="new-article btn" @click.prevent="writeArticle">发布文章</a>
-          <a href="#" class="user-info btn">用户中心</a>
+          <a href="#" class="user-info btn" @click.prevent="userCenter">用户中心</a>
         </div>
       </div>
       <div v-else>
@@ -54,8 +54,7 @@ export default {
   data() {
     return {}
   },
-  methods: {
-  }
+  methods: {}
 }
 </script>
 

@@ -15,6 +15,10 @@ export const globalMixin = {
         writeArticle() {
             this.$router.push({name: "WriteArticle"})
         },
+        // 用户中心
+        userCenter() {
+            this.$router.push({name: "UserCenter"})
+        },
         // 打开登录弹窗
         openLoginDialog() {
             this.$login(true)

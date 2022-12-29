@@ -19,7 +19,6 @@
 
 <script>
 import Nav from "@/components/Nav";
-import {getArticleList} from "@/api/article";
 import Banner from "@/components/Carousel/Banner";
 import AuthorCard from "@/components/UserCard/AuthorCard";
 import ArticleCard from "@/components/ArticleCard";
@@ -35,12 +34,8 @@ export default {
     return {}
   },
   mounted() {
-    this.getArticleList()
   },
   methods: {
-    async getArticleList() {
-      const res = await getArticleList();
-    }
   }
 }
 </script>
