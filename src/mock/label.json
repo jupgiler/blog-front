@@ -3,55 +3,68 @@
     "data": [
       {
         "id": 1,
-        "name": "java"
+        "name": "java",
+        "value": "1"
       },
       {
         "id": 2,
-        "name": "goland"
+        "name": "goland",
+        "value": "2"
       },
       {
         "id": 3,
-        "name": "idea"
+        "name": "idea",
+        "value": "3"
       },
       {
         "id": 4,
-        "name": "linux"
+        "name": "linux",
+        "value": "4"
       },
       {
         "id": 5,
-        "name": "docker"
+        "name": "docker",
+        "value": "5"
       },
       {
         "id": 6,
-        "name": "es"
+        "name": "es",
+        "value": "6"
       },
       {
         "id": 7,
-        "name": "kafka"
+        "name": "kafka",
+        "value": "7"
       },
       {
         "id": 8,
-        "name": "redis"
+        "name": "redis",
+        "value": "8"
       },
       {
         "id": 9,
-        "name": "php"
+        "name": "php",
+        "value": "9"
       },
       {
         "id": 10,
-        "name": "c++"
+        "name": "c++",
+        "value": "10"
       },
       {
         "id": 11,
-        "name": "go"
+        "name": "go",
+        "value": "11"
       },
       {
         "id": 12,
-        "name": "mysql"
+        "name": "mysql",
+        "value": "12"
       },
       {
         "id": 13,
-        "name": "python"
+        "name": "python",
+        "value": "13"
       }
     ]
   }
